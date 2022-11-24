@@ -1,6 +1,5 @@
 #include "mbed.h"
 #include "H3LIS331DL.h"
- git hub testing
  
 H3LIS331DL h3lis(D4, D7);
 I2C i2c0(D14, D15);

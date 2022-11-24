@@ -1,5 +1,6 @@
 #include "mbed.h"
 #include "H3LIS331DL.h"
+ git hub testing
  
 H3LIS331DL h3lis(D4, D7);
 I2C i2c0(D14, D15);
@@ -93,12 +94,12 @@ int* ReadDS1621(void)
             //y = ((AccelY.read()-0.5)*6);
             //z = ((AccelZ.read()-0.5)*6);
 
-            if (x >= accelWarning || y >= accelWarning || z >= accelWarning || x <= accelWarning2 || y <= accelWarning2 || z <= accelWarning2) {
+            //if (x >= accelWarning || y >= accelWarning || z >= accelWarning || x <= accelWarning2 || y <= accelWarning2 || z <= accelWarning2) {
 
-                pc.printf(" !!! CRASH DETECTED !!! \r\n");
-                pc.printf(" !!! POSSIBLE INJURY !!! \r\n");
-                pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((AccelX.read()-0.5)*6), ((AccelY.read()-0.5)*6), ((AccelZ.read()-0.5)*6) );
-                ledAccel = 1;
+               // pc.printf(" !!! CRASH DETECTED !!! \r\n");
+               // pc.printf(" !!! POSSIBLE INJURY !!! \r\n");
+               // pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((AccelX.read()-0.5)*6), ((AccelY.read()-0.5)*6), ((AccelZ.read()-0.5)*6) );
+               // ledAccel = 1;
 
 
             }

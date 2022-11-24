@@ -46,7 +46,7 @@ int* ReadDS1621(void)
     int main(void)
     {
         int*temp;
-        h3lis.init();
+       // h3lis.init();
         
         while(1)
         {
@@ -70,7 +70,7 @@ int* ReadDS1621(void)
             ledTemp = 0;
             }
 
-            double accel[3] = {0.0, 0.0, 0.0};
+           /* double accel[3] = {0.0, 0.0, 0.0};
         
             h3lis.getAcceleration(accel);
             pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1])-0.5)*6), ((accel[2]-0.5)*6) );
@@ -85,13 +85,14 @@ int* ReadDS1621(void)
                 pc.printf(" !!! POSSIBLE INJURY !!! \r\n");
                 pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1])-0.5)*6), ((accel[2]-0.5)*6) );
                 ledAccel = 1;
+                */
 
-            //pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((AccelX.read()-0.5)*6), ((AccelY.read()-0.5)*6), ((AccelZ.read()-0.5)*6) );
-            //thread_sleep_for(1000);
+            pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((AccelX.read()-0.5)*6), ((AccelY.read()-0.5)*6), ((AccelZ.read()-0.5)*6) );
+            thread_sleep_for(1000);
 
-            //x = ((AccelX.read()-0.5)*6);
-            //y = ((AccelY.read()-0.5)*6);
-            //z = ((AccelZ.read()-0.5)*6);
+            x = ((AccelX.read()-0.5)*6);
+            y = ((AccelY.read()-0.5)*6);
+            z = ((AccelZ.read()-0.5)*6);
 
             if (x >= accelWarning || y >= accelWarning || z >= accelWarning || x <= accelWarning2 || y <= accelWarning2 || z <= accelWarning2) {
 

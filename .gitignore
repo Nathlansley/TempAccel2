@@ -5,3 +5,4 @@ compile_commands.json
 .cache
 mbed-os
 H3LIS331DL
+adafruit-gps-complete

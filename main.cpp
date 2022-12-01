@@ -1,7 +1,7 @@
 #include "mbed.h"
 #include "H3LIS331DL.h"
  
-H3LIS331DL h3lis(D4, D7);
+H3LIS331DL h3lis(D14, D15);
 I2C i2c0(D14, D15);
 const int addr = 0x9E;
 extern int* ReadDS1621(void);
@@ -73,7 +73,7 @@ int* ReadDS1621(void)
             double accel[3] = {0.0, 0.0, 0.0};
         
             h3lis.getAcceleration(accel);
-            pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1])-0.5)*6), ((accel[2]-0.5)*6) );
+            pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1]-0.5)*6), ((accel[2]-0.5)*6) );
             thread_sleep_for(1000);
 
             x = ((accel[0]-0.5)*6);
@@ -83,7 +83,7 @@ int* ReadDS1621(void)
 
                 pc.printf(" !!! CRASH DETECTED !!! \r\n");
                 pc.printf(" !!! POSSIBLE INJURY !!! \r\n");
-                pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1])-0.5)*6), ((accel[2]-0.5)*6) );
+                pc.printf("acceleration = x = %f\t y = %f\t z = %f\r\n" , ((accel[0]-0.5)*6), ((accel[1])-0.5)*6, ((accel[2]-0.5)*6) );
                 ledAccel = 1;
 
            

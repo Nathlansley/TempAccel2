@@ -6,3 +6,6 @@ compile_commands.json
 mbed-os
 H3LIS331DL
 adafruit-gps-complete
+MBed_Adafruit-GPS-Library
+GPS_HelloWorld
+GPS
